@@ -12,6 +12,11 @@ set autoindent
 set smarttab
 set ignorecase
 
+"Autocomplete
+set wildmode=longest,list,full
+set wildmenu
+
+
 ""set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()

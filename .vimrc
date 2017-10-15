@@ -1,7 +1,10 @@
 set nocompatible		" be iMproved, required
 filetype indent on		" required
 syntax enable			"
-set t_Co=256			"Allow colors in vim
+set t_Co=256			" Allow colors in vim
+colorscheme slate		" Prefer this over terminal-induced colorscheme
+
+set mouse=a
 set number
 set ruler			
 set autowrite			
@@ -11,7 +14,10 @@ set nowrap
 set autoindent
 set smarttab
 set ignorecase
-
+"set cursorline			" Not functioning properly for me (Konsole)
+set lazyredraw
+set nobackup			" I dislike backups. Just use Git/SVN/Mercurial or something
+"set noswapfile			" Dangerous affaire
 "Autocomplete
 set wildmode=longest,list,full
 set wildmenu
@@ -64,6 +70,5 @@ let g:airline#extensions#tabline#enabled = 1
 "Straight tabs
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
 
 

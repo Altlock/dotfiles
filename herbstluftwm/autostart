@@ -13,25 +13,28 @@ hc emit_hook reload
 # DO NOT enable shadows, you'll ruin everything.
 compton -CGfF -b -i 0.75 --vsync opengl --backend xrender
 
-hsetroot -center ~/Wallpapers/Females/wallhaven-32129.jpg -brightness 0.1 -contrast 1.04
+# Disable beep
+xset -b
 
+# WALLPAPER :D
+#hsetroot -center ~/Wallpapers/Females/wallhaven-32129.jpg -brightness 0.1 -contrast 1.04
+hsetroot -cover ~/Pictures/Wallpapers/wallhaven-597078.jpg
 # remove all existing keybindings
 hc keyunbind --all
 
 # keybindings
 # if you have a super key you will be much happier with Mod set to Mod4
-Mod=Mod4    # Use alt as the main modifier
-#Mod=Mod4   # Use the super key as the main modifier
+#Mod=Mod1    # Use alt as the main modifier
+Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-q close
-hc keybind $Mod-Return spawn konsole
 
-
-### CUSTOM KEYBINDINGS ###
-hc keybind $Mod-z spawn urxvt
+### LAUNCH KEYBINDINGS ###
+hc keybind $Mod-z spawn sakura
 hc keybind $Mod-x spawn firefox
+hc keybind $Mod-Return spawn rofi -show run
 
 # basic movement
 # focusing clients
@@ -123,8 +126,8 @@ hc set frame_bg_transparent 1
 hc set frame_transparent_width 5
 hc set frame_gap 4
 
-hc attr theme.active.color '#202020'
-hc attr theme.normal.color '#FFFFFF'
+hc attr theme.active.color '#FFFFFF'
+hc attr theme.normal.color '#000000'
 hc attr theme.urgent.color orange
 hc attr theme.inner_width 0
 hc attr theme.inner_color black
@@ -136,9 +139,9 @@ hc attr theme.active.inner_color '#000000'
 hc attr theme.active.outer_color '#FFFFFF'
 hc attr theme.background_color '#262626'
 
-hc set window_gap 20
-hc set frame_padding 20
-hc set smart_window_surroundings 0
+hc set window_gap 5
+hc set frame_padding 10
+hc set smart_window_surroundings 1
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 

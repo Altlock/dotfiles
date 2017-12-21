@@ -11,10 +11,13 @@ hc emit_hook reload
 #Personal startup apps
 
 # DO NOT enable shadows, you'll ruin everything.
-compton -CGfF -b -i 0.75 --vsync opengl --backend xrender
+compton -CGfF -b -i 0.75 --vsync opengl-oml --backend glx
 
 # Disable beep
 xset -b
+
+# Popups for password
+#lxpolkit
 
 # WALLPAPER :D
 #hsetroot -center ~/Wallpapers/Females/wallhaven-32129.jpg -brightness 0.1 -contrast 1.04

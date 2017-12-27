@@ -21,7 +21,8 @@ xset -b
 
 # WALLPAPER :D
 #hsetroot -center ~/Wallpapers/Females/wallhaven-32129.jpg -brightness 0.1 -contrast 1.04
-hsetroot -cover ~/Pictures/Wallpapers/wallhaven-597078.jpg
+#hsetroot -cover ~/Pictures/Wallpapers/wallhaven-597078.jpg
+hsetroot -center Pictures/Wallpapers/68675911-narwhal-wallpapers.jpg
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -36,8 +37,15 @@ hc keybind $Mod-Shift-q close
 
 ### LAUNCH KEYBINDINGS ###
 hc keybind $Mod-z spawn sakura
-hc keybind $Mod-x spawn firefox
+hc keybind $Mod-x spawn /home/jan/Documents/waterfox/waterfox
 hc keybind $Mod-Return spawn rofi -show run
+
+### Volume control ###
+
+hc keybind $Mod-F9 spawn amixer set Master 5%-
+hc keybind $Mod-F10 spawn amixer set Master 5%+
+hc keybind $Mod-F2 spawn xbacklight - 5
+hc keybind $Mod-F3 spawn xbacklight + 5
 
 # basic movement
 # focusing clients

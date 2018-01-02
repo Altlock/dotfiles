@@ -12,12 +12,13 @@ x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
 panel_height=14 #16
-font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
 # font="-*-Anonymous Pro-medium-*-*-*-9-*-*-*-*-*-*-*"
+#font="-*-fixed-medium-*-*-*-12-*-*-*-*-*-*-*"
+font="-*-Droid Sans-medium-*-*-*-12-*-*-*-*-*-*-*"
 
 bgcolor=$(hc get frame_border_normal_color)
 selbg=$(hc get window_border_active_color)
-selfg='#f0f0f0' #'#101010'
+selfg='#FFFFFF' #'#101010'
 
 ####
 # Try to find textwidth binary.
@@ -67,7 +68,7 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#efefef)%H:%M^fg(#909090), %Y-%m-^fg(#efefef)%d'
+        date +$'date\t^fg(#efefef)%H:%M^fg(#FFFFFF), %Y-%m-^fg(#FFFFFF)%d'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -183,4 +184,4 @@ hc pad $monitor $panel_height
 
 } 2> /dev/null | dzen2 -w $panel_width -x $x -y $y -fn "$font" -h $panel_height \
     -e 'button3=;button4=exec:herbstclient use_index -1;button5=exec:herbstclient use_index +1' \
-    -ta l -bg "$bgcolor" -fg '#efefef'
+    -ta l -bg "$bgcolor" -fg '#FFFFFF'

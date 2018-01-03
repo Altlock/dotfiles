@@ -1,0 +1,8 @@
+- defaults:
+        link:
+                relink: true
+
+- link:
+        ~/.vimrc: .vimrc
+        ~/.config/herbstluftwm/autostart:
+                path: herbstluftwm/autostart 

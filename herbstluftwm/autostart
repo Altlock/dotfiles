@@ -9,6 +9,7 @@ hc() {
 hc emit_hook reload
 
 #Personal startup apps
+conky
 
 # DO NOT enable shadows, you'll ruin everything.
 compton -CGfF -b --vsync opengl-oml --backend glx #-i 0.75
@@ -22,7 +23,8 @@ xset -b
 # WALLPAPER :D
 #hsetroot -center ~/Wallpapers/Females/wallhaven-32129.jpg -brightness 0.1 -contrast 1.04
 #hsetroot -cover ~/Pictures/Wallpapers/wallhaven-597078.jpg
-hsetroot -center ~/Pictures/Wallpapers/68675911-narwhal-wallpapers.jpg
+WALL="$(shuf -n1 -e ~/Pictures/Wallpapers/*)"
+hsetroot -center $WALL
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -39,6 +41,9 @@ hc keybind $Mod-Shift-q close
 hc keybind $Mod-z spawn gnome-terminal #st/sakura
 hc keybind $Mod-x spawn /home/jan/Documents/waterfox/waterfox
 hc keybind $Mod-Return spawn rofi -show run -config /home/jan/.local/share/.rofi/themes/base16-nord.rasi
+
+hc keybind $Mod-F6 spawn setxkbmap us -variant colemak
+hc keybind $Mod-F8 spawn setxkbmap us
 
 ### Volume control ###
 
@@ -87,7 +92,7 @@ hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..9} )
+tag_names=( WEB MISC CLOJ TXT {5..9}  )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
@@ -158,7 +163,7 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-#hc rule class=XTerm tag=3 # move all xterms to tag 3
+hc rule class=Waterfox tag=WEB # move all xterms to tag 3
 hc rule focus=on # normally focus new clients
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
